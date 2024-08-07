@@ -1,0 +1,9 @@
+
+{% for category in category_tree %}
+    <li>{{category.name}}</li>
+    {% if category.children %}
+        <ul>
+            {% include 'category.html' with category_tree=category.children %}
+        </ul>
+    {% endif %}
+{% endfor %}
